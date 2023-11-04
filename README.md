@@ -13,3 +13,19 @@ eg:    @OneToMany(cascade = CascadeType.ALL)
 private List<CommisionEmp> commissions;
 
 
+
+-------------------------------------------------------------
+
+** Created a new git repo and ran the below commands **
+** To create a new repo and push to git run the below commands**
+
+echo "# springSimpleEmployee" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/adityapatilsatish/springSimpleEmployee.git
+git push -u origin main
+
+-------------------------------------------------------------
+
