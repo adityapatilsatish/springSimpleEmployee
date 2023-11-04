@@ -6,6 +6,7 @@ import com.spring.demo.repository.employeeRepoInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -70,22 +71,24 @@ public class employeeService {
 
         Employee excestingEmployee = EmployeeRepo.findById(employee.getEpmployeId()).orElse(null);
 
-        List<CommisionEmp> commissions = null;
-
-        commissions.addAll(excestingEmployee.getCommissions());
-
-        for(CommisionEmp comEmp: employee.getCommissions()){
-            comEmp.getEmployeeCommId();
-        }
-
         if (excestingEmployee == null){
             System.out.println("Invalid Input");
             return null;
         }
+        List<CommisionEmp> commissions = new ArrayList<>() ;
+
+        if(excestingEmployee.getCommissions() != null){
+            List<CommisionEmp> commissions1 = excestingEmployee.getCommissions();
+            commissions.addAll(commissions1);
+        }
+
+        if(employee.getCommissions()!= null){
+            commissions.addAll(employee.getCommissions());
+        }
 
         excestingEmployee.setName(employee.getName());
         excestingEmployee.setDoj(employee.getDoj());
-        excestingEmployee.setCommissions(employee.getCommissions());
+        excestingEmployee.setCommissions(commissions);
 
         return EmployeeRepo.save(excestingEmployee);
 
