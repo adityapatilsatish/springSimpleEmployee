@@ -73,4 +73,29 @@ Create a Pull Request
 
 ------------------------------------------------------------
 
+To check status of current:
 
+git status
+
+------------------------------------------------------------
+
+To sync code from git repo/branch to local
+
+Make sure you're on the branch you want to sync:
+git checkout your-branch-name
+
+Fetch the latest changes from the remote repository to ensure you have the most up-to-date information about the branch:
+git fetch
+
+Merge the changes from the remote branch into your local branch. You can do this using the git merge command, or if you prefer a non-fast-forward merge, you can use git pull. For a standard merge, use:
+git merge origin/your-branch-name
+
+For a non-fast-forward merge (creating a merge commit), you can use:
+git pull origin your-branch-name
+
+Resolve any merge conflicts, if they occur. Git will automatically attempt to merge changes, but if it encounters conflicting changes, you will need to resolve them manually. Open the conflicted files, edit them to your satisfaction, and then use git add to mark them as resolved. After resolving all conflicts, commit the changes.
+
+Push the merged changes back to the remote repository if necessary:
+git push origin your-branch-name
+
+-------------------------------------------------------------
