@@ -26,4 +26,11 @@ http://localhost:8080/actuator
 also we can implement custom checkers that implements HealthIndicator Interface
 
 ---------------------------------------------------------
+To configure spring profiles create a 
 
+application.properties
+application-dev.properties
+application-local.properties
+
+files by what your choises and then configure inteleji with this profile by enabling vm option
+edit configuration> modify options> add vm options > then add <<-Dspring.profiles.active=local>> for running locally by picking up applicaion-local.properties file by default it will identify key word and config
